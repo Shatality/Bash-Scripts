@@ -6,6 +6,8 @@ sudo cp -a /usr/share/zabbix/ /backup/zabbix_server/usr_share_zabbix
  
 #Останавливаем zabbix server
 sudo systemctl stop zabbix-server
+
+#Даем zabbix server остановиться
 sleep 5
  
 #Делаем выгрузку mysql dump
