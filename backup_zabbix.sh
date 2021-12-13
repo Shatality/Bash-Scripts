@@ -1,7 +1,9 @@
 #!/bin/bash
 
+#ДАННЫЙ СКРИПТ ДЕЛАЕТ ЛОКАЛЬНЫЙ БЭКАП ZABBIX SERVER
+
 #Создаем каталог Backup со вложенными каталогами и назначаем права
-sudo mkdir -p /backup/zabbix_server/etc_zabbix/ /backup/zabbix_server/usr_share_zabbix && chmod -R 777 /backup
+sudo mkdir -p /backup/zabbix_server/etc_zabbix/ /backup/zabbix_server/usr_share_zabbix && chmod -R 755 /backup
 
 #Копируем конфигурационные файлы Zabbix
 sudo cp -a /etc/zabbix/ /backup/zabbix_server/etc_zabbix
