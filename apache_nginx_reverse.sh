@@ -12,10 +12,6 @@ yes | yum install httpd
 # Изменяем порт на 8080, так как на 80 у нас уже работает Nginx
 sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
 # НАСТРАИВАЕМ БАЛАНСИРОВКУ
-# Отключаем selinux
-setenforce 0
-# Остагавливаем firewall
-systemctl stop firewalld
 # Заменяем дефолтный конфиг nginx
 cd /etc/nginx/
 rm -f nginx.conf
@@ -40,15 +36,19 @@ echo "<h1> Welcome 8082 <h1>" > index.html
 touch /var/log/httpd/error1.log /var/log/httpd/error2.log
 # Добавляем права на директории с index файлами
 chmod 755 -R /var/www
+# Отключаем selinux
+setenforce 0
+# Остагавливаем firewall
+systemctl stop firewalld
 # Запускаем Nginx:
 systemctl start nginx
-# Настраиваем автозапуск Nginx при перезагрузке системы:
-systemctl enable nginx
 # Проверяем статус службы Nginx:
 systemctl status nginx
-# Включаем автозагрузку Apache:
-systemctl enable httpd
+# Настраиваем автозапуск Nginx при перезагрузке системы:
+systemctl enable nginx
 # Запускаем Apache:
 systemctl start httpd
 # Проверяем статус службы Apache
 systemctl status httpd
+# Включаем автозагрузку Apache:
+systemctl enable httpd
