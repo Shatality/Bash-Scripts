@@ -52,3 +52,5 @@ systemctl start httpd
 systemctl status httpd
 # Включаем автозагрузку Apache:
 systemctl enable httpd
+# Отключаем selinx в конфигурационном файле
+sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
