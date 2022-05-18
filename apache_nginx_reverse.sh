@@ -3,12 +3,12 @@
 # Добавьте EPEL-репозиторий# Добавьте EPEL-репозиторий
 yes | yum install epel-release
 # Установите Nginx:
-yes | yum install nginx
+yum install nginx
 # УСТАНАВЛИВАЕМ APACHE
 # Обновляем пакет Apache httpd:
 yum update httpd
 # Установливаем пакеты Apache:
-yes | yum install httpd
+yum install httpd
 # Изменяем порт на 8080, так как на 80 у нас уже работает Nginx
 sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
 # НАСТРАИВАЕМ БАЛАНСИРОВКУ
