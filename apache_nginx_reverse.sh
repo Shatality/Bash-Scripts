@@ -2,13 +2,15 @@
 # УСТАНАВЛИВАЕМ NGINX
 # Добавьте EPEL-репозиторий# Добавьте EPEL-репозиторий
 yes | yum install epel-release
+# Импортируем RPM-GPG ключи
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY*
 # Установите Nginx:
 yum install nginx
 # УСТАНАВЛИВАЕМ APACHE
 # Обновляем пакет Apache httpd:
-yum update httpd
+yes | yum update httpd
 # Установливаем пакеты Apache:
-yum install httpd
+yes | yum install httpd
 # Изменяем порт на 8080, так как на 80 у нас уже работает Nginx
 sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
 # НАСТРАИВАЕМ БАЛАНСИРОВКУ
@@ -52,5 +54,3 @@ systemctl start httpd
 systemctl status httpd
 # Включаем автозагрузку Apache:
 systemctl enable httpd
-# Отключаем selinx в конфигурационном файле
-sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
