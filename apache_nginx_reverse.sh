@@ -5,7 +5,7 @@ yes | yum install epel-release
 # Импортируем RPM-GPG ключи
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY*
 # Установите Nginx:
-yum install nginx
+yes | yum install nginx
 # УСТАНАВЛИВАЕМ APACHE
 # Обновляем пакет Apache httpd:
 yes | yum update httpd
