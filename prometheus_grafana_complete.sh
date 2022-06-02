@@ -169,7 +169,8 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9100']
-	  
+
+
   - job_name: 'apache_exporter'
     scrape_interval: 5s
     static_configs:
