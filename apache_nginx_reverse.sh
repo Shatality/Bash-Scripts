@@ -27,13 +27,13 @@ rm -f welcome.conf
 wget https://raw.githubusercontent.com/Shatality/Config-Backups/main/welcome.conf
 # Создаем файлы index.html
 cd /var/www/html
-echo "<h1> Welcome 8080 <h1>" > index.html
+echo "<h1> Server 1 (port 8080) <h1>" > index.html
 mkdir /var/www/html1
 cd /var/www/html1
-echo "<h1> Welcome 8081 <h1>" > index.html
+echo "<h1> WelcServer 2 (port 8081)ome 8081 <h1>" > index.html
 mkdir /var/www/html2
 cd /var/www/html2
-echo "<h1> Welcome 8082 <h1>" > index.html
+echo "<h1> Server 3 (port 8082) <h1>" > index.html
 # Добавляем error logs
 touch /var/log/httpd/error1.log /var/log/httpd/error2.log
 # Добавляем права на директории с index файлами
