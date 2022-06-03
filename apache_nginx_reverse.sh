@@ -30,7 +30,7 @@ cd /var/www/html
 echo "<h1> Server 1 (port 8080) <h1>" > index.html
 mkdir /var/www/html1
 cd /var/www/html1
-echo "<h1> WelcServer 2 (port 8081)ome 8081 <h1>" > index.html
+echo "<h1> Server 2 (port 8081) <h1>" > index.html
 mkdir /var/www/html2
 cd /var/www/html2
 echo "<h1> Server 3 (port 8082) <h1>" > index.html
