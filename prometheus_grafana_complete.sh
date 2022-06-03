@@ -1,3 +1,4 @@
+#!/bin/bash
 # Для отображения событий в правильное время, необходимо настроить его синхронизацию. Для этого установим chrony:
 yes | yum install chrony
 systemctl enable chronyd
